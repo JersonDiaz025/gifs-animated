@@ -12,24 +12,22 @@ input{
   width: 20%;
 }
 
-.gif-grid{
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 9px 20px;
+}
+.container2{
   align-content: center;
-  border: 1px solid;
+  border: 1px solid rgb(59, 52, 52);
   overflow: hidden;
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.gif-grid img{
-  /* align-content: center;
-  flex-direction: row; */
-  /* width: 20%; */
-}
-
-.info-grid{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
- 
+.container2 p{
+  margin-left: 25px;
+  font-weight:bold;
 }
