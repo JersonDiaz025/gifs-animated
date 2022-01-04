@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 const AddItems = ({studentsNames}) => {
 
@@ -17,12 +17,13 @@ const AddItems = ({studentsNames}) => {
     setValue(e.target.value)
 }
     return (
-        <form onSubmit={handlerAddItems}>
-            <h1>Add-Items</h1>
-            <input type="text" value={value1} onChange={handlerSetValue}/>
-            <button onChange={handlerSetValue}>submit</button>
-        </form>
-
+        <div className="form">
+            <form onSubmit={handlerAddItems} className="sub_form">
+                <h1>Search superhero gifs</h1>
+                <input type="text" value={value1} placeholder="Superhero name" onChange={handlerSetValue}/>
+                <button onChange={handlerSetValue}>Search</button>
+            </form>
+        </div>
     );
 }
 

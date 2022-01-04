@@ -1,53 +1,29 @@
 import React, {useState, useEffect} from 'react';
-import Axios from 'axios';
-import Gifsgrid from './GifsGrid';
+import getDataApi from '../helpers/handlers';
+import Gifsgrid from './ViewGifs';
 
-const Apigif = ({dates}) => {
+const Apigif = ({inputData}) => {
 
     const [image, setImages] = useState([]);
 
     // useEffect run one time
     useEffect(()=>{
-        Axios.get('https://api.giphy.com/v1/gifs/search?q=goku&limit=10&api_key=8vHpsqKGNmpzuY0CtRMztnCFd0neu1NT')
-        .then(resp =>{
-            setImages(resp.data.data);
-        })
-
-
-
-
-
-
-
-
-
-
-        // try {
-        //     const url = 'https://api.giphy.com/v1/gifs/search?q=goku&limit=10&api_key=8vHpsqKGNmpzuY0CtRMztnCFd0neu1NT';
-        //     const gifs = await fetch(url);
-        //     const {data} = await gifs.json();
-        //     setImages(data);
-        //     // console.log('klkf')
-
-        // } catch (error) {
-        //     console.error(error);
-        // }
-
-    }, [])
+        getDataApi({inputData})
+        .then((data=>setImages(data)))
+    }, [inputData])
 
     return (
         <>
-            <h2>{dates}</h2>
-            <div className='container'>
+            <hr/>
+            <h2>{inputData}</h2>
+            <div className='container1'>
                 {
-                    image.map(({title, id, images})=>(
+                    image.map(({title,id,images})=>(
                         <Gifsgrid key={id} dataInfo={title} gifs={images} />
-                        // console.log(image)
                     ))
                 }
             </div>
         </>
     );
 }
-
 export default Apigif;

@@ -4,22 +4,15 @@ import Apigif from "./ApiGifs";
 
 const GifApp = () => {
 
-    const [students, setStudent] = useState(['Juan']);
-
-    const handlerAddName = (e) =>{
-        // setStudent([...students, 'Daniel'])
-    }
+    const [students, setStudent] = useState([ ]);
 
     return(
-        <div>
-            <h1>Gif-App</h1>
+        <div className="form">
             <AddItems studentsNames={setStudent}/>
-            <hr/>
-            <button onClick={handlerAddName}>Add name</button>
             <ol>
                 {
                     students.map((names, i)=>{
-                        return <Apigif key={i} dates={names}/>
+                        return <Apigif key={i} inputData={names} />
                     })
                 }
             </ol>
