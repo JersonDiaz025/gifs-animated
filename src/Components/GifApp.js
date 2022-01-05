@@ -1,14 +1,15 @@
 import React, {useState} from "react";
-import AddItems from "./AddItems";
+import Form from "./Form/Form";
 import Apigif from "./ApiGifs";
 
 const GifApp = () => {
 
-    const [students, setStudent] = useState([ ]);
+    const [students, setStudent] = useState([]);
+    console.log(students)
 
     return(
         <div className="form">
-            <AddItems studentsNames={setStudent}/>
+            <Form studentsNames={setStudent}/>
             <ol>
                 {
                     students.map((names, i)=>{

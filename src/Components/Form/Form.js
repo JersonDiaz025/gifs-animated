@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React, {useState} from 'react';
+import classes from "./FormStyle";
 
 const AddItems = ({studentsNames}) => {
 
@@ -17,11 +18,11 @@ const AddItems = ({studentsNames}) => {
     setValue(e.target.value)
 }
     return (
-        <div className="form">
-            <form onSubmit={handlerAddItems} className="sub_form">
+        <div style={classes.containerForm}>
+            <form onSubmit={handlerAddItems} style={classes.formFirst}>
                 <h1>Search superhero gifs</h1>
-                <input type="text" value={value1} placeholder="Superhero name" onChange={handlerSetValue}/>
-                <button onChange={handlerSetValue}>Search</button>
+                <input type="search" value={value1} placeholder="Superhero name" onChange={handlerSetValue}/>
+                <button onChange={handlerSetValue} style={classes.buttonForm}>Search</button>
             </form>
         </div>
     );
