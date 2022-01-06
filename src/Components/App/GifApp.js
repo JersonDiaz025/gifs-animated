@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import Form from "./Form/Form";
-import Apigif from "./GetGifs/ApiGifs";
+import Form from "../Form/Form";
+import Apigif from "../GetGifs/ApiGifs";
 
 const GifApp = () => {
 

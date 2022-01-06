@@ -1,29 +1,35 @@
-import React, {useState, useEffect} from 'react';
-import getDataApi from '../../helpers/handlers';
-import Gifsgrid from '../ViewsGifs/ViewGifs';
+// import React, {useState, useEffect} from 'react';
+// import getDataApi from '../../helpers/handlers';
+// import Gifsgrid from '../ViewsGifs/ViewGifs';
 import classes from './GetGifStyled';
+
+import {useAxiosAPI} from '../../hooks/useAxiosAPI';
 
 const Apigif = ({inputData}) => {
 
-    const [image, setImages] = useState([]);
+    const {loading} = useAxiosAPI();
+
+    // const [image, setImages] = useState([]);
 
     // useEffect run one time
-    useEffect(()=>{
-        getDataApi({inputData})
-        .then((data=>setImages(data)))
-    }, [inputData])
+    // useEffect(()=>{
+    //     getDataApi({inputData})
+    //     .then((data=>setImages(data)))
+    // }, [inputData])
 
     return (
+
         <>
             <hr/>
             <h2 style={classes.subTitle}>{inputData}</h2>
-            <div style={classes.container}>
+            {loading?"Cargando...": "Fin de carga"}
+            {/* <div style={classes.container}>
                 {
                     image.map(({title,id,images})=>(
-                        <Gifsgrid key={id} dataInfo={title} gifs={images} />
+                    <Gifsgrid key={id} dataInfo={title} gifs={images} />
                     ))
                 }
-            </div>
+            </div> */}
         </>
     );
 }
