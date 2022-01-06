@@ -20,8 +20,8 @@ const AddItems = ({studentsNames}) => {
     return (
         <div style={classes.containerForm}>
             <form onSubmit={handlerAddItems} style={classes.formFirst}>
-                <h1>Search superhero gifs</h1>
-                <input type="search" value={value1} placeholder="Superhero name" onChange={handlerSetValue}/>
+                <h1 style={classes.title}>Search superhero gifs</h1>
+                <input style={classes.input} type="search" value={value1} placeholder="Superhero name" onChange={handlerSetValue}/>
                 <button onChange={handlerSetValue} style={classes.buttonForm}>Search</button>
             </form>
         </div>
@@ -31,6 +31,5 @@ const AddItems = ({studentsNames}) => {
 AddItems.prototype = {
     studentsNames: PropTypes.func.isRequired
 }
-
 
 export default AddItems;

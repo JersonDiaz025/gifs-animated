@@ -1,14 +1,13 @@
 import React, {useState} from "react";
 import Form from "./Form/Form";
-import Apigif from "./ApiGifs";
+import Apigif from "./GetGifs/ApiGifs";
 
 const GifApp = () => {
 
     const [students, setStudent] = useState([]);
-    console.log(students)
 
     return(
-        <div className="form">
+        <div>
             <Form studentsNames={setStudent}/>
             <ol>
                 {

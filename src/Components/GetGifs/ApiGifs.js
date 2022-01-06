@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import getDataApi from '../helpers/handlers';
-import Gifsgrid from './ViewGifs';
+import getDataApi from '../../helpers/handlers';
+import Gifsgrid from '../ViewsGifs/ViewGifs';
+import classes from './GetGifStyled';
 
 const Apigif = ({inputData}) => {
 
@@ -15,8 +16,8 @@ const Apigif = ({inputData}) => {
     return (
         <>
             <hr/>
-            <h2>{inputData}</h2>
-            <div className='container1'>
+            <h2 style={classes.subTitle}>{inputData}</h2>
+            <div style={classes.container}>
                 {
                     image.map(({title,id,images})=>(
                         <Gifsgrid key={id} dataInfo={title} gifs={images} />

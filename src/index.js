@@ -5,6 +5,6 @@ import GifApp from './Components/GifApp';
 const content = document.getElementById('root')
 
 ReactDOM.render(
-    <GifApp/>,content
+    <GifApp />,content
 );
 
