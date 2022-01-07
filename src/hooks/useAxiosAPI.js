@@ -1,17 +1,19 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import getDataApi from '../helpers/getAxiosApi';
 
-
-export const useAxiosAPI = () =>{
+export const useAxiosAPI = (inputData) =>{
 
     const [state, setState] = useState({data:[], loading: true})
 
-    setTimeout(()=>{
+    useEffect( ()=>{
+        setTimeout(()=>{
 
-        setState({data:[], loading: false})
-    }, 3000)
-    
+        getDataApi({inputData})
+        .then((images)=>setState({data: images, loading: false}))
 
+        }, 2000)
 
+    }, [inputData])
 
     return state
 }

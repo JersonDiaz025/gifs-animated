@@ -15,6 +15,7 @@ const classes = {
     paragraph:{
         marginLeft:"25px",
         fontWeight:"bold",
+        fontWeight:'bold'
     },
 
     images:{

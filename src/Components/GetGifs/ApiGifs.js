@@ -1,36 +1,26 @@
-// import React, {useState, useEffect} from 'react';
-// import getDataApi from '../../helpers/handlers';
-// import Gifsgrid from '../ViewsGifs/ViewGifs';
+import Gifsgrid from '../ViewsGifs/ViewGifs';
 import classes from './GetGifStyled';
-
 import {useAxiosAPI} from '../../hooks/useAxiosAPI';
+import 'animate.css'
 
 const Apigif = ({inputData}) => {
 
-    const {loading} = useAxiosAPI();
-
-    // const [image, setImages] = useState([]);
-
-    // useEffect run one time
-    // useEffect(()=>{
-    //     getDataApi({inputData})
-    //     .then((data=>setImages(data)))
-    // }, [inputData])
+    const {data, loading} = useAxiosAPI(inputData);
 
     return (
-
         <>
             <hr/>
-            <h2 style={classes.subTitle}>{inputData}</h2>
-            {loading?"Cargando...": "Fin de carga"}
-            {/* <div style={classes.container}>
+            {loading && <p style={classes.text}>Loading...</p>}
+            <h2 style={classes.subTitle} className='animate__bounceIn'>{inputData}</h2>
+            <div style={classes.container}>
                 {
-                    image.map(({title,id,images})=>(
-                    <Gifsgrid key={id} dataInfo={title} gifs={images} />
+                    data.map(({title, images, id})=>(
+                        <Gifsgrid key={id} dataInfo={[title,images]} />
                     ))
                 }
-            </div> */}
+            </div>
         </>
     );
 }
+
 export default Apigif;

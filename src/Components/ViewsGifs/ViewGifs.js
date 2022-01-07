@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from './ViewsStyled'
 
-const Gifsgrid = ({dataInfo, gifs}) => {
+const Gifsgrid = ({dataInfo}) => {
     return (
         <div style={classes.container2}>
-            <p style={classes.paragraph}>{dataInfo}</p>
-            <img style={classes.images} src={gifs.downsized.url} alt={dataInfo} />
+            <p style={classes.paragraph}>{dataInfo[0]}</p>
+            <img style={classes.images} src={dataInfo[1].downsized.url} alt={dataInfo} />
         </div>
     );
 }
