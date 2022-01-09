@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import Form from "../Form/Form";
-import Apigif from "../GetGifs/ApiGifs";
+import AddItems from "../Form/Form";
+import Apigif from "../GetGifs/GetImages";
 
 const GifApp = () => {
 
@@ -8,7 +8,7 @@ const GifApp = () => {
 
     return(
         <div>
-            <Form studentsNames={setStudent}/>
+            <AddItems studentsNames={setStudent}/>
             <ol>
                 {
                     students.map((names, i)=>{

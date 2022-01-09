@@ -1,10 +1,10 @@
+import image from '../../static/image.png';
 
 const classes = {
 
     containerForm: {
         position: "relative",
         width: "100%",
-        margin: "2px auto",
     },
 
     formFirst:{
@@ -21,19 +21,27 @@ const classes = {
     },
 
     buttonForm:{
-        backgroundColor: "rgb(131, 126, 134)",
+        fontWeight:'bold',
+        backgroundColor:"rgb(213 77 77 / 57%)",
         marginLeft: "1%",
-        border: "1px none",
+        border: "1px solid black",
         cursor: "pointer",
-        borderRadius: "5px",
+        borderRadius: "3px",
+        padding:"0.5%"
     },
 
     input:{
         color: "rgb(12, 14, 13)",
-        width: "24%",
+        width: "32%",
         border: "none",
-    }
+        padding:"0.5%"
+    },
 
+    image:{
+        width: "33%",
+        marginTop: "-139px",
+        marginLeft: "-3%",
+    },
 
 }
 

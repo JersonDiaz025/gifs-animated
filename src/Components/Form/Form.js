@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import React, {useState} from 'react';
 import classes from "./FormStyle";
-import 'animate.css'
+import image from '../../static/image.png';
+import 'animate.css';
 
 const AddItems = ({studentsNames}) => {
 
@@ -22,9 +23,10 @@ const AddItems = ({studentsNames}) => {
         <div style={classes.containerForm}>
             <form onSubmit={handlerAddItems} style={classes.formFirst}>
                 <h1 style={classes.title} className="animate__animated animate__bounce">Search superhero gifs</h1>
-                <input style={classes.input} type="search" value={value1} placeholder="Superhero name" onChange={handlerSetValue}/>
-                <button onChange={handlerSetValue} style={classes.buttonForm}>Search</button>
+                <input style={classes.input} type="search" value={value1} placeholder="Search" onChange={handlerSetValue}/>
+                <button onChange={handlerSetValue} style={classes.buttonForm} className="animate__bounceIn">Search</button>
             </form>
+            <img src={image} alt="heroes image" style={classes.image}/>
         </div>
     );
 }
